@@ -124,4 +124,4 @@ def achievements():
     return render_template('achievements.html', profile=profile_data, achievements=achievements_data)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=5000)
