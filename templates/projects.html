@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="mb-4">Projects</h2>
+
+{% for project in projects %}
+<div class="card mb-4">
+    <div class="card-header bg-info text-white">
+        <h5>{{ project.title }}</h5>
+    </div>
+    <div class="card-body">
+        <p class="card-text">{{ project.description }}</p>
+    </div>
+</div>
+{% endfor %}
+
+<div class="mt-4">
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Back to Home</a>
+</div>
+{% endblock %}

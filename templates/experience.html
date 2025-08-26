@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="mb-4">Internships</h2>
+
+{% for internship in internships %}
+<div class="card mb-4">
+    <div class="card-header bg-success text-white">
+        <h5>{{ internship.role }} - {{ internship.company }}</h5>
+    </div>
+    <div class="card-body">
+        <p class="card-text"><strong>Period:</strong> {{ internship.period }}</p>
+        <p class="card-text">{{ internship.description }}</p>
+    </div>
+</div>
+{% endfor %}
+
+<h2 class="mb-4 mt-5">Certifications & Trainings</h2>
+
+<div class="list-group">
+    {% for cert in certifications %}
+    <div class="list-group-item">
+        <i class="bi bi-award-fill text-primary me-2"></i> {{ cert }}
+    </div>
+    {% endfor %}
+</div>
+
+<div class="mt-4">
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Back to Home</a>
+</div>
+{% endblock %}
